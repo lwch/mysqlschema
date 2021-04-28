@@ -43,6 +43,6 @@ mysql migration tools for golang
   * sort by version and upgrade
   * insert or update `__tb_schema__.data_version`
   * insert `__tb_schema_logs__`
-7. ``\_\_tb\_schema\_\_ and \_\_tb\_schema\_logs\_\_ table is the protected table, so you can not use this table`
+7. ``__tb_schema__ and __tb_schema_logs__ table is the protected table, so you can not use this table``
 8. ``v0.sql is the protected file, so you can not define this version``
 9. ``each sql operation will the table name in sql file``
