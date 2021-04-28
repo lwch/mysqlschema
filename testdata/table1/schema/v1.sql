@@ -1,0 +1,5 @@
+CREATE TABLE table1(
+    id int NOT NULL AUTO_INCREMENT,
+    a varchar(32) NOT NULL DEFAULT '',
+    PRIMARY KEY(id)
+)Engine=InnoDB DEFAULT CHARSET=utf8mb4;

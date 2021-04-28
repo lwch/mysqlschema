@@ -1,0 +1,2 @@
+ALTER TABLE table1 CHANGE COLUMN
+    a b varchar(32) NOT NULL DEFAULT '';
