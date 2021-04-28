@@ -1,0 +1,1 @@
+INSERT INTO table1(a) VALUES('a');
