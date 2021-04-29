@@ -19,6 +19,7 @@ type table struct {
 }
 
 func Build(db *sql.DB, dir string, errExit bool) error {
+	defer log.Printf("[INFO] build schema done")
 	err := prepare(db)
 	if err != nil {
 		return err
@@ -86,7 +87,7 @@ func buildDir(db *sql.DB, dir string, tb table) error {
 	buildDir := path.Join(dir, "schema")
 	fi, err := os.Stat(buildDir)
 	if os.IsNotExist(err) || !fi.IsDir() {
-		log.Println("[WARN] no schema found, skiped")
+		log.Println("  * no schema found, skiped")
 	} else {
 		err = buildSchema(db, path.Base(dir), buildDir, &tb.exists, tb.schemaVersion)
 		if err != nil {
@@ -97,7 +98,7 @@ func buildDir(db *sql.DB, dir string, tb table) error {
 	buildDir = path.Join(dir, "data")
 	fi, err = os.Stat(buildDir)
 	if os.IsNotExist(err) || !fi.IsDir() {
-		log.Println("[WARN] no data found, skiped")
+		log.Println("  * no data found, skiped")
 	} else {
 		err = buildData(db, path.Base(dir), buildDir, &tb.exists, tb.dataVersion)
 		if err != nil {

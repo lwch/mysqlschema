@@ -22,7 +22,7 @@ func buildLatest(db *sql.DB, name, dir string, version int) (err error) {
 	if !strings.Contains(string(code), name) {
 		return fmt.Errorf("table name %s not found in latest.sql", name)
 	}
-	log.Printf("upgrade latest schema of table %s...", name)
+	log.Printf("  * schema: upgrade [%s] to latest...", name)
 	tx, er := db.Begin()
 	if er != nil {
 		return er

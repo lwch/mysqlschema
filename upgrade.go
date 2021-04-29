@@ -78,7 +78,7 @@ func doUpgrade(db *sql.DB, name string, upgrade []string, exists *bool, current,
 	}
 	for _, file := range upgrade {
 		nextVersion := ver(file)
-		log.Printf("upgrade %s of %s from %d to %d...", key, name, current, nextVersion)
+		log.Printf("  * %s: upgrade [%s] from %d to %d...", key, name, current, nextVersion)
 		err := run(file, current, int(nextVersion))
 		if err != nil {
 			return err
