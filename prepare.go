@@ -39,7 +39,7 @@ func prepare(db *sql.DB) (err error) {
 		class tinyint NOT NULL DEFAULT 0 COMMENT '0=schema;1=data',
 		current_version int NOT NULL DEFAULT 0 COMMENT 'current version',
 		upgrade_version int NOT NULL DEFAULT 0 COMMENT 'upgrade version',
-		code TEXT NOT NULL DEFAULT '' COMMENT 'upgrade code',
+		code TEXT NOT NULL COMMENT 'upgrade code',
 		PRIMARY KEY(id),
 		INDEX idx_name_class(name, class)
 	)Engine=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'table schema version change log'`)
