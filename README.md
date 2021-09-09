@@ -11,10 +11,10 @@ mysql migration tools for golang
 1. open connection by [go-sql-driver](https://github.com/go-sql-driver/mysql)
 2. call Build function and input schema directory
 
-    db, _ := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?loc=Local",
-        dbUser, dbPass, dbHost, dbPort, dbName))
-    defer db.Close()
-    Build(db, "testdata", true)
+        db, _ := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?loc=Local",
+            dbUser, dbPass, dbHost, dbPort, dbName))
+        defer db.Close()
+        Build(db, "testdata", true)
 
 ## Directory
 
