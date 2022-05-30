@@ -33,16 +33,16 @@ mysql migration tools for golang
 3. load each table version in `__tb_schema__`
 4. range each table by given directory
 5. build schema
-  * if current table is not exists, create table by latest.sql
-  * otherwise range v*.sql higher than current version
-  * sort by version and upgrade
-  * insert or update `__tb_schema__.schema_version`
-  * insert `__tb_schema_logs__`
+   * if current table is not exists, create table by latest.sql
+   * otherwise range v*.sql higher than current version
+   * sort by version and upgrade
+   * insert or update `__tb_schema__.schema_version`
+   * insert `__tb_schema_logs__`
 6. build data
-  * range v*.sql higher than current version
-  * sort by version and upgrade
-  * insert or update `__tb_schema__.data_version`
-  * insert `__tb_schema_logs__`
+   * range v*.sql higher than current version
+   * sort by version and upgrade
+   * insert or update `__tb_schema__.data_version`
+   * insert `__tb_schema_logs__`
 7. ``__tb_schema__ and __tb_schema_logs__ table is the protected table, so you can not use this table``
 8. ``v0.sql is the protected file, so you can not define this version``
-9. ``each sql operation will the table name in sql file``
+9. ``each sql operation will be the table name in sql file``
